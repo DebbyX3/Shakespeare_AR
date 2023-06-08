@@ -2,16 +2,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ImageFade : MonoBehaviour
+public class ImageController : MonoBehaviour
 {
     [HideInInspector]
-    public Image ImageToFade;
+    public Image Image { get; set; }
 
     private void Start()
     {
         // Take the image attached to this GameObject
         // Alternatively, you can assign it in the inspector by removing [HideInInspector] and the line below
-        ImageToFade = gameObject.GetComponent<Image>();
+        Image = gameObject.GetComponent<Image>();
+    }
+
+    public void MakeImageTransparent()
+    {
+        Image.color = new Color(1, 1, 1, 0);
     }
 
     public void FadeImageIn()
@@ -33,7 +38,7 @@ public class ImageFade : MonoBehaviour
             for (float i = 1; i >= 0; i -= Time.deltaTime)
             {
                 // set color with i as alpha
-                ImageToFade.color = new Color(1, 1, 1, i);
+                Image.color = new Color(1, 1, 1, i);
                 yield return null;
             }
         }
@@ -44,7 +49,7 @@ public class ImageFade : MonoBehaviour
             for (float i = 0; i <= 1; i += Time.deltaTime)
             {
                 // set color with i as alpha
-                ImageToFade.color = new Color(1, 1, 1, i);
+                Image.color = new Color(1, 1, 1, i);
                 yield return null;
             }
         }
