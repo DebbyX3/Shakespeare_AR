@@ -4,13 +4,24 @@ using System.Collections;
 
 public class ImageFade : MonoBehaviour
 {
-    // the image you want to fade, assign in inspector
-    public Image img;
+    [HideInInspector]
+    public Image ImageToFade;
 
-    public void OnButtonClick()
+    private void Start()
     {
-        // fades the image out when you click
-        StartCoroutine(FadeImage(true));
+        // Take the image attached to this GameObject
+        // Alternatively, you can assign it in the inspector by removing [HideInInspector] and the line below
+        ImageToFade = gameObject.GetComponent<Image>();
+    }
+
+    public void FadeImageIn()
+    {
+        StartCoroutine(FadeImage(false));
+    }
+
+    public void FadeImageOut()
+    {
+        StartCoroutine(FadeImage(true));        
     }
 
     IEnumerator FadeImage(bool fadeAway)
@@ -22,7 +33,7 @@ public class ImageFade : MonoBehaviour
             for (float i = 1; i >= 0; i -= Time.deltaTime)
             {
                 // set color with i as alpha
-                img.color = new Color(1, 1, 1, i);
+                ImageToFade.color = new Color(1, 1, 1, i);
                 yield return null;
             }
         }
@@ -33,7 +44,7 @@ public class ImageFade : MonoBehaviour
             for (float i = 0; i <= 1; i += Time.deltaTime)
             {
                 // set color with i as alpha
-                img.color = new Color(1, 1, 1, i);
+                ImageToFade.color = new Color(1, 1, 1, i);
                 yield return null;
             }
         }
