@@ -45,8 +45,6 @@ public class FigureController : MonoBehaviour
         // Set the image controller
         // You can also set it in the inspector by making the field ImageController 'public'
         ImageController = gameObject.GetComponent<ImageController>();
-
-        Debug.Log("awake " + gameObject.name);
     }
 
     private void Start()
