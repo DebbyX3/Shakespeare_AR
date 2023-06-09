@@ -37,6 +37,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
+  - {fileID: 2885342370286156965}
   m_UserColorIndex: 1
   m_Mute: 0
   m_Solo: 0
@@ -64,5 +65,36 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 3a95a7b884b48f542a2bb22ff39eb6c3
-  m_FloatValues: {}
+  m_FloatValues:
+    9661641058cec9942b6749e4067f6b4d: 0
   m_TransitionOverrides: {}
+--- !u!244 &2885342370286156965
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 0013b88f8659fc6419a0d655c9d9b0d3
+  m_EffectName: Microsoft Spatializer Mixer
+  m_MixLevel: e02e0426e9398d04c94f8af9ba236d2a
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &5534225757375851324
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c8fdd4e8a5e15da4fb646a1b6589e811
+  m_EffectName: Highpass Simple
+  m_MixLevel: 3447b7f0d4edcd3468d0e7048766ded6
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: dc8867ea767639c4bbc960e87986df3a
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0

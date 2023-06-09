@@ -7,7 +7,7 @@ public class ImageController : MonoBehaviour
     [HideInInspector]
     public Image Image { get; set; }
 
-    private void Start()
+    private void Awake()
     {
         // Take the image attached to this GameObject
         // Alternatively, you can assign it in the inspector by removing [HideInInspector] and the line below
