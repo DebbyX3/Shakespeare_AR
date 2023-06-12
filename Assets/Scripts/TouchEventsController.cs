@@ -7,14 +7,23 @@ using UnityEngine.UI;
 public class TouchEventsController : MonoBehaviour, IMixedRealityTouchHandler
 {
     // To be assigned in the inspector
-    public FigureController Figure1;
-    public FigureController Figure2;
-    public FigureController Figure3;
+    public FigureController Figure;
 
     public void OnTouchStarted(HandTrackingInputEventData eventData)
     {
         Debug.Log("Touch event triggered");
 
+        if (Figure.TouchEventTriggered == false)
+        {
+            Figure.TouchEventTriggered = true;
+            Figure.FadeImageIn();
+        }
+    }
+
+    // This is the old code that controlled all 3 figures
+    /*
+    public void OnTouchStarted(HandTrackingInputEventData eventData)
+    {       
         if (Figure1.TouchEventTriggered == false)
         {
             Figure1.TouchEventTriggered = true;
@@ -30,7 +39,7 @@ public class TouchEventsController : MonoBehaviour, IMixedRealityTouchHandler
             Figure3.TouchEventTriggered = true;
             Figure3.FadeImageIn();
         }
-    }
+    }*/
 
     public void OnTouchCompleted(HandTrackingInputEventData eventData) { }
 

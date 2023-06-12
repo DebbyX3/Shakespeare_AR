@@ -19,6 +19,11 @@ public class ImageController : MonoBehaviour
         Image.color = new Color(1, 1, 1, 0);
     }
 
+    public void EnableImage(bool enable)
+    {
+        Image.enabled = enable;
+    }
+
     public void FadeImageIn()
     {
         StartCoroutine(FadeImage(false));
@@ -41,10 +46,16 @@ public class ImageController : MonoBehaviour
                 Image.color = new Color(1, 1, 1, i);
                 yield return null;
             }
+
+            // Disable the image so it doesn't leave a 'ghost'
+            EnableImage(false);
         }
+
         // fade from transparent to opaque
         else
         {
+            EnableImage(true);
+
             // loop over 1 second
             for (float i = 0; i <= 1; i += Time.deltaTime)
             {

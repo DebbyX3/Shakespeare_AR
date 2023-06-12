@@ -50,7 +50,8 @@ public class FigureController : MonoBehaviour
     private void Start()
     {
         // Start by making the image transparent
-        ImageController.MakeImageTransparent();
+        //ImageController.MakeImageTransparent();
+        ImageController.EnableImage(false);
     }
 
     void Update()
@@ -61,6 +62,9 @@ public class FigureController : MonoBehaviour
             && TouchEventTriggered == true)
         {
             ImageController.FadeImageOut(); // fade out the image
+
+            // Invoke the event that counts how many figures disappeared
+            SceneController.Instance.FigureDisppeared.Invoke();
 
             CloseEnough = true;
             ProximityTriggered = true;
