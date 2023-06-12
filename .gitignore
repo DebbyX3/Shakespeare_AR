@@ -10,6 +10,19 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
+# -------------------
+
+# Custom: do not upload the video
+/[Aa]ssets/[Pp]refabs/[Vv]ideo/**/*.MOV
+
+# Custom: do not upload the audio
+/[Aa]ssets/[Pp]refabs/[Aa]udio/**/*.mp3
+
+# Custom: do not upload the walls
+/[Aa]ssets/[Pp]refabs/[Ww]alls/**/*.fbx
+
+# -------------------
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
